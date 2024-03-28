@@ -32,7 +32,7 @@ sessionStorage = {}
 # Внутри функции доступен request.json - это JSON,
 # который отправила нам Алиса в запросе POST
 def main():
-    logging.info(f'Request: {request.json!r}')
+    logging.info('Request:' + request.json)
 
     # Начинаем формировать ответ, согласно документации
     # мы собираем словарь, который потом отдадим Алисе
@@ -49,7 +49,7 @@ def main():
     # непосредственно за ведение диалога
     handle_dialog(request.json, response)
 
-    logging.info(f'Response:  {response!r}')
+    logging.info(f'Response:' + response)
 
     # Преобразовываем в JSON и возвращаем
     return jsonify(response)
